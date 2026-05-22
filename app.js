@@ -1,4 +1,24 @@
-      state.sheetSecret = new FormData(event.currentTarget).get("sheetSecret").trim();
+      function loginTemplate() {
+  return `
+    <section class="login-page">
+      <form class="login-card" id="loginForm">
+        <div class="brand" style="color:var(--ink);margin-bottom:18px;">
+          <div class="brand-mark">II</div>
+          <div>
+            <h1>IIEC Attendance</h1>
+            <p style="color:var(--muted);">Chhatrapati Shivaji Maharaj University</p>
+          </div>
+        </div>
+        <p>Login with your registered IIEC account to continue.</p>
+        <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="username"></label>
+        <label class="field"><span>Password</span><input name="password" type="password" required autocomplete="current-password"></label>
+        <button class="btn" type="submit" style="width:100%;">Login</button>
+        <p class="notice hide" id="loginError">Invalid email or password.</p>
+      </form>
+    </section>
+  `;
+}
+state.sheetSecret = new FormData(event.currentTarget).get("sheetSecret").trim();
       save();
       render();
     });
