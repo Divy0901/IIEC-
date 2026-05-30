@@ -34,17 +34,6 @@ The app writes to only two worksheet tabs:
 - `TeamInfo`: member records and profile update approvals.
 - `Attendance`: meetings, QR attendance, attendance correction requests, and leave records.
 
-## Publishing plan
-
-Recommended flow:
-
-1. Keep the source code in GitHub.
-2. Host the static app files on Hostinger with HTTPS enabled.
-3. Keep data in Google Sheets through Apps Script.
-4. Do not store the main database on your laptop.
-
-This keeps hosting simple and avoids exposing your personal machine to the internet.
-
 ## Running locally
 
 For install and service worker testing, serve the folder over HTTP:
