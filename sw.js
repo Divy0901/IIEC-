@@ -1,4 +1,4 @@
-const CACHE = "iiec-attendance-v1";
+const CACHE = "iiec-portal-v2"; // Incremented version clears existing caches immediately
 const ASSETS = [
   "./",
   "./index.html",
@@ -15,8 +15,8 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)))
-    )
+      Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)))\
+    ).then(() => self.clients.claim())
   );
 });
 
